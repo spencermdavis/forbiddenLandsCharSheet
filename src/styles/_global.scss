@@ -1,0 +1,71 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-weight: 400;
+  font-size: 2rem;
+  background-color: #292d25;
+}
+
+svg {
+  z-index: 0;
+}
+
+// skip link styles
+
+.skip-link {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.skip-link:focus {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: absolute;
+  width: auto;
+  color: #ffffff;
+}
