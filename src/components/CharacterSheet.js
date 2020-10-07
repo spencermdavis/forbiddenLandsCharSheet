@@ -3,7 +3,8 @@ import firebase from "./firebase";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const CharacterSheet = () => {
-  const [char, setChar] = useState([]);
+  const [chars, setChars] = useState([]);
+  const user = useContext(UserContext);
   useEffect(() => {
     const dbRef = firebase.database().ref();
 
@@ -24,10 +25,18 @@ const CharacterSheet = () => {
       }
 
       // state setter sets state as arrays prepared from database snapshot
-      setChar(characterDataArr);
+      setChars(characterDataArr);
     });
   }, []);
-  return <div className="characterSheet"></div>;
+  return (
+    <div className="characterSheet">
+      {chars.map((charObj, index) => {
+        if (charObj.ownedBy === user) {
+          return <div></div>;
+        }
+      })}
+    </div>
+  );
 };
 
 export default CharacterSheet;
